@@ -8,7 +8,7 @@ int DFT(double *input , int length ,			//输入数据及长度
 		double *output_re , double *output_im ,	//输出数据的虚实两部
 		int startFs , int endFs ){		//起-终
 	
-    int n = 0 , k = 0;
+	int n = 0 , k = 0;
 	double temporary = 0.0;				//临时容器
 
 	for ( n=0 ; n<length ; n++ ){			//初始化归零
