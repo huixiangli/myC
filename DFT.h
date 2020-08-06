@@ -19,8 +19,8 @@ int DFT(double *input , int length ,			//输入数据及长度
 	for ( k=startFs ; k<=endFs ; k++ ){		//主体计算
 		for ( n=0 ; n<length ; n++ ){
 			temporary = -2 * pi * (double)k * (double)n / (double)length;
-			*(output_re+LENGTH-1-k) = *(output_re+LENGTH-1-k) + *(input+n) * cos(temporary);
-			*(output_im+LENGTH-1-k) = *(output_im+LENGTH-1-k) + *(input+n) * sin(temporary);
+			*(output_re+length-1-k) = *(output_re+length-1-k) + *(input+n) * cos(temporary);
+			*(output_im+length-1-k) = *(output_im+length-1-k) + *(input+n) * sin(temporary);
 		}
 	}
 
