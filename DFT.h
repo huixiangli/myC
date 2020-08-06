@@ -2,21 +2,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define pi 3.14159265358979			//¶¨Òåpi½´
+#define pi 3.14159265358979				//å®šä¹‰pié…±
 
-int DFT(double *input , int length ,			//ÊäÈëÊı¾İ¼°³¤¶È
-		double *output_re , double *output_im ,	//Êä³öÊı¾İµÄĞéÊµÁ½²¿
-		int startFs , int endFs ){				//Æğ-ÖÕ
+int DFT(double *input , int length ,			//è¾“å…¥æ•°æ®åŠé•¿åº¦
+		double *output_re , double *output_im ,	//è¾“å‡ºæ•°æ®çš„è™šå®ä¸¤éƒ¨
+		int startFs , int endFs ){		//èµ·-ç»ˆ
 	
     int n = 0 , k = 0;
-	double temporary = 0.0;						//ÁÙÊ±ÈİÆ÷
+	double temporary = 0.0;				//ä¸´æ—¶å®¹å™¨
 
-	for ( n=0 ; n<length ; n++ ){				//³õÊ¼»¯¹éÁã
+	for ( n=0 ; n<length ; n++ ){			//åˆå§‹åŒ–å½’é›¶
 		*(output_re+n) = 0.0;
 		*(output_im+n) = 0.0;
 	}
 
-	for ( k=startFs ; k<=endFs ; k++ ){			//Ö÷Ìå¼ÆËã
+	for ( k=startFs ; k<=endFs ; k++ ){		//ä¸»ä½“è®¡ç®—
 		for ( n=0 ; n<length ; n++ ){
 			temporary = -2 * pi * (double)k * (double)n / (double)length;
 			*(output_re+LENGTH-1-k) = *(output_re+LENGTH-1-k) + *(input+n) * cos(temporary);
@@ -24,12 +24,12 @@ int DFT(double *input , int length ,			//ÊäÈëÊı¾İ¼°³¤¶È
 		}
 	}
 
-	return 0;									//·µ»ØÁãÖµ£¬½áÊøº¯Êı
+	return 0;					//è¿”å›é›¶å€¼ï¼Œç»“æŸå‡½æ•°
 }
 /*
-*		  length
+*	      length
 *	X(k) = sum x(n)*e^(-i*2*pi*k*n/length), k => {x=>N|0<=x<length}
-*		   n=0
+*	       n=0
 */
 /*
 int LENGTH = 1024;
