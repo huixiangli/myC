@@ -11,12 +11,9 @@ int DFT(double *input , int length ,			//输入数据及长度
 	int n = 0 , k = 0;
 	double temporary = 0.0;				//临时容器
 
-	for ( n=0 ; n<length ; n++ ){			//初始化归零
-		*(output_re+n) = 0.0;
-		*(output_im+n) = 0.0;
-	}
-
 	for ( k=startFs ; k<=endFs ; k++ ){		//主体计算
+		*(output_re+n) = 0.0;
+		*(output_im+n) = 0.0;			//初始化归零
 		for ( n=0 ; n<length ; n++ ){
 			temporary = -2 * pi * (double)k * (double)n / (double)length;
 			*(output_re+length-1-k) = *(output_re+length-1-k) + *(input+n) * cos(temporary);
