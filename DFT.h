@@ -1,4 +1,3 @@
-
 /* Discrete Fourier Transform by lihuixiang0518@hotmail.com on 06-08-2020 */
 #include <stdio.h>
 #include <stdlib.h>
